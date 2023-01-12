@@ -1,2 +1,2 @@
-here we list the python requirements:
-
+# Here goes the pip dependencies for this project.
+# Apply them with `pip install -r requirements.txt`

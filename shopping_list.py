@@ -1,3 +1,5 @@
+import json
+
 # Data stucture:
 # The shopping list is modeled as a dictionary keyed by product name.
 # The value is another dictionary, with the following keys: "isle" and "quantity"
@@ -26,11 +28,21 @@ def modify_product(name, quantity, isle=0):
     else:
         add_product(name, quantity, isle)
 
+def load_data(filename)
+    with open(filename) as input_file:
+        shopping_list = json.load(input_file)
+
+
+def save_data(filename)
+    with open(filename, "w") as output_file:
+        json.dump(shopping_list, output_file, indent=4)
+
 
 if __name__ == '__main__':
     # Create a prompt loop with the main menu
+    # load_data("shopping_list.json")
     while True:
-        match(int(input("Enter 1 to Add, 2 to Remove, 3 to Modify, 4 to List, 5 to Exit"))):
+        match(int(input("Enter 1 to Add, 2 to Remove, 3 to Modify, 4 to List, 5 to Save and Exit: "))):
             case 1:
                 name = input("Please enter name of product: ")
                 quantity = int(input("Enter quantity needed: "))
@@ -48,6 +60,7 @@ if __name__ == '__main__':
             case 4:
                 print(shopping_list)
             case 5:
+                save_data("shopping_list.json")
                 print ("Thank you and goodbye!")
                 break
         print ("\n") # newline

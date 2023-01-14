@@ -17,6 +17,8 @@ def remove_product(shopping_list, name):
         del shopping_list[name]
     else:
         print("Sorry, no such product on list!  :( ")
+
+
 def modify_product(shopping_list, name, quantity, isle=0):
     "If the parameter isle is not specified or 0, the isle will not be modified."
     if name in shopping_list.keys():
@@ -25,7 +27,7 @@ def modify_product(shopping_list, name, quantity, isle=0):
         if isle != 0:
             shopping_list[name]["isle"] = isle
     else:
-        add_product(name, quantity, isle)
+        add_product(shopping_list, name, quantity, isle)
 
 def load_data(filename):
     with open(filename) as input_file:
